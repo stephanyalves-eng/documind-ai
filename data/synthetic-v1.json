@@ -1,0 +1,140 @@
+{
+  "version": "synthetic-v1",
+  "documents": {
+    "standard": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Subtotal: 1,000.00",
+        "Tax: 200.00",
+        "Total: 1,200.00",
+        "Issue date: 2026-01-15",
+        "Valid until: 2026-03-15"
+      ],
+      [
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ],
+    "equivalent": [
+      [
+        "Supplier: Meridian Test Supply",
+        "Quote currency: usd",
+        "Grand total: 1200"
+      ],
+      [
+        "Lead time: within 2 weeks from order",
+        "Warranty term: 1 year from delivery",
+        "Payment: payable 30 days from invoice date"
+      ]
+    ],
+    "different": [
+      [
+        "Vendor: Quartz Test Systems",
+        "Currency: USD",
+        "Total amount: 1,350.00",
+        "Delivery: within 21 calendar days after order",
+        "Warranty: 24 months after delivery",
+        "Payment: due 60 days after invoice"
+      ]
+    ],
+    "partial": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Total: 1200",
+        "Delivery: within 14 calendar days after order",
+        "Payment: TBD"
+      ]
+    ],
+    "foreign": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: EUR",
+        "Total: 1200",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ],
+    "bad_total": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Subtotal: 1000",
+        "Tax: 199.99",
+        "Total: 1200",
+        "Issue date: 2026-02-10",
+        "Valid until: 2026-02-01",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ],
+    "conflict": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Total: 1200",
+        "Issue date: 2026-02-30"
+      ],
+      [
+        "Total: 950",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ],
+    "conditional": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Total: 1200",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment: due 30 days after acceptance and invoice approval"
+      ]
+    ],
+    "freeform": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Total: 1200",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment: settlement is due thirty days after the invoice date"
+      ]
+    ],
+    "local_format": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: CHF",
+        "Total: 1.200,00",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ],
+    "mixed": [
+      [
+        "Vendor: Meridian Test Supply",
+        "Currency: USD",
+        "Total: 1200",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ],
+      []
+    ],
+    "unlabeled": [
+      [
+        "Meridian Test Supply submits this offer in US dollars.",
+        "Our all-inclusive total is 1200.00.",
+        "Delivery term: within 14 calendar days after order",
+        "Warranty: 12 months after delivery",
+        "Payment terms: due 30 days after invoice"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,2380 @@
+{
+  "dataset": {
+    "version": "synthetic-v1",
+    "documents": 12,
+    "pairs": 11,
+    "manifest_sha256": "2322408d6671d3e236ca8ea6a0f6b172a4a797ad93d44f9687d5bae075c94f07",
+    "gold_sha256": "a944b444977bb26a34bb1e0ff85281fc29631c61de01a94237e70ae9628e7847",
+    "pdf_sha256": {
+      "standard": "f4f56a718f8d77d3682ed5d433db0c7ef2f9c547b583f96d39e64c18ec03ff5b",
+      "equivalent": "91801f33d325a838d1062156107056953f33e7a191960178402ee1487e25e803",
+      "different": "e841957f9bd7cad0ced8bd0150e73029a60c84fac10a7fa4d4ad9d0e13a455f8",
+      "partial": "54285e9a2ef2a24714232344dfd93d17a4eab0a80481650dde46837f115ce2d3",
+      "foreign": "acebb81431cdcf7b7998f5570c8c6d0ceec40fc5500ecdd9a43ad7206168746d",
+      "bad_total": "b2c01695879e0da0d0b8a5ce0201e9db59cf1e6364c93d6dd02fc062e2061c66",
+      "conflict": "bd1b4a3c8ee30a865ab4ff1cd54ddf1cba0725e483bf6e1bae148b047f6b0ad4",
+      "conditional": "4dfde68285c62aa4cac21551d98cdbbbf2027c13cb7fd6e7c0a08d8decc41e96",
+      "freeform": "c3addea192a048ca2952a822b6dda70aec6d3024cd7b81d3ee1889b4471c90be",
+      "local_format": "885309b96a8e4c948b1c810b8ddae7e60103a272eca8ef533c2d54046e402b85",
+      "mixed": "9a35d396f0aa4ca03c5ecc07101171bbb6d95faf52deb77603821806f74e725a",
+      "unlabeled": "ddabee84fcb3874988f0782ffdb69bda39f26bf2223a2fe136d9cefc0a4368fc"
+    }
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pymupdf": "2.1",
+    "pydantic": "2.14.4",
+    "reportlab": "5.1.0"
+  },
+  "extraction": {
+    "micro": {
+      "tp": 72,
+      "fp": 0,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.935064935064935,
+      "f1": 0.9664429530201343
+    },
+    "per_field": {
+      "vendor": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348
+      },
+      "currency": {
+        "tp": 10,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091
+      },
+      "amount": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8181818181818182,
+        "f1": 0.9
+      },
+      "delivery_term": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "warranty": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "payment_terms": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "subtotal": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "tax": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "issue_date": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "valid_until": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "numeric_exact_match": 0.8666666666666667,
+    "citation_accuracy": 1.0,
+    "required_abstention_rate": 0.1111111111111111,
+    "counts": {
+      "required_slots": 72,
+      "required_abstained": 8,
+      "required_needs_review": 4,
+      "citations_predicted": 72,
+      "citations_correct": 72,
+      "numeric_gold": 15,
+      "numeric_correct": 13
+    },
+    "cases": [
+      {
+        "document": "standard",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "subtotal",
+        "expected": "1000.00",
+        "actual": "1000.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "tax",
+        "expected": "200.00",
+        "actual": "200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "issue_date",
+        "expected": "2026-01-15",
+        "actual": "2026-01-15",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "standard",
+        "field": "valid_until",
+        "expected": "2026-03-15",
+        "actual": "2026-03-15",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "delivery_term",
+        "expected": "within 2 weeks from order",
+        "actual": "within 2 weeks from order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "warranty",
+        "expected": "1 year from delivery",
+        "actual": "1 year from delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "payment_terms",
+        "expected": "payable 30 days from invoice date",
+        "actual": "payable 30 days from invoice date",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "equivalent",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "equivalent",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "equivalent",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "equivalent",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "different",
+        "field": "vendor",
+        "expected": "Quartz Test Systems",
+        "actual": "Quartz Test Systems",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "amount",
+        "expected": "1350.00",
+        "actual": "1350.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "warranty",
+        "expected": "24 months after delivery",
+        "actual": "24 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "payment_terms",
+        "expected": "due 60 days after invoice",
+        "actual": "due 60 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "different",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "different",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "different",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "different",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "partial",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "partial",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "partial",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "partial",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "partial",
+        "field": "warranty",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "partial",
+        "field": "payment_terms",
+        "expected": null,
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "blank, placeholder, or oversized value"
+      },
+      {
+        "document": "partial",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "partial",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "partial",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "partial",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "foreign",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "currency",
+        "expected": "EUR",
+        "actual": "EUR",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "foreign",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "foreign",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "foreign",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "foreign",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "bad_total",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "subtotal",
+        "expected": "1000.00",
+        "actual": "1000.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "tax",
+        "expected": "199.99",
+        "actual": "199.99",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "issue_date",
+        "expected": "2026-02-10",
+        "actual": "2026-02-10",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "bad_total",
+        "field": "valid_until",
+        "expected": "2026-02-01",
+        "actual": "2026-02-01",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "amount",
+        "expected": null,
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "conflicting_labeled_values"
+      },
+      {
+        "document": "conflict",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conflict",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conflict",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conflict",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "invalid calendar date"
+      },
+      {
+        "document": "conflict",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conditional",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "payment_terms",
+        "expected": "due 30 days after acceptance and invoice approval",
+        "actual": "due 30 days after acceptance and invoice approval",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "conditional",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conditional",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conditional",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "conditional",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "freeform",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "payment_terms",
+        "expected": "settlement is due thirty days after the invoice date",
+        "actual": "settlement is due thirty days after the invoice date",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "freeform",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "freeform",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "freeform",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "freeform",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "local_format",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "local_format",
+        "field": "currency",
+        "expected": "CHF",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "unsupported or ambiguous currency"
+      },
+      {
+        "document": "local_format",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "local_format",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "local_format",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "local_format",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "local_format",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "local_format",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "local_format",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "local_format",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "mixed",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": "Meridian Test Supply",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": "1200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "mixed",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "mixed",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "mixed",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "mixed",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "vendor",
+        "expected": "Meridian Test Supply",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "currency",
+        "expected": "USD",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "amount",
+        "expected": "1200.00",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "unlabeled",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "unlabeled",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "unlabeled",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "unlabeled",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      }
+    ]
+  },
+  "comparison": {
+    "strict": {
+      "status_accuracy": 0.8787878787878788,
+      "status_correct": 58,
+      "status_total": 66,
+      "abstention_rate": 0.18181818181818182,
+      "abstentions": 12,
+      "divergence": {
+        "tp": 7,
+        "fp": 4,
+        "fn": 1,
+        "precision": 0.6363636363636364,
+        "recall": 0.875,
+        "f1": 0.7368421052631579
+      },
+      "confusion_expected_then_predicted": {
+        "matched": {
+          "matched": 39,
+          "different": 4,
+          "missing": 3,
+          "needs_review": 0
+        },
+        "different": {
+          "matched": 0,
+          "different": 7,
+          "missing": 0,
+          "needs_review": 1
+        },
+        "missing": {
+          "matched": 0,
+          "different": 0,
+          "missing": 1,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "matched": 0,
+          "different": 0,
+          "missing": 0,
+          "needs_review": 11
+        }
+      },
+      "cases": [
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "vendor",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "delivery_term",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "warranty",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "warranty",
+          "expected": "missing",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "payment_terms",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "cross_currency_amount"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "vendor",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "currency",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "delivery_term",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "warranty",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "payment_terms",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        }
+      ]
+    },
+    "rules": {
+      "status_accuracy": 0.9090909090909091,
+      "status_correct": 60,
+      "status_total": 66,
+      "abstention_rate": 0.21212121212121213,
+      "abstentions": 14,
+      "divergence": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "confusion_expected_then_predicted": {
+        "matched": {
+          "matched": 42,
+          "different": 0,
+          "missing": 3,
+          "needs_review": 1
+        },
+        "different": {
+          "matched": 0,
+          "different": 6,
+          "missing": 0,
+          "needs_review": 2
+        },
+        "missing": {
+          "matched": 0,
+          "different": 0,
+          "missing": 1,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "matched": 0,
+          "different": 0,
+          "missing": 0,
+          "needs_review": 11
+        }
+      },
+      "cases": [
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "equivalent",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "vendor",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "delivery_term",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "different_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "warranty",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "different_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "different",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "different_controlled_clause"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "warranty",
+          "expected": "missing",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "partial",
+          "field": "payment_terms",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "cross_currency_amount"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "foreign",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "bad_total",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conflict",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "conditional",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unsupported_clause_relationship"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "freeform",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unsupported_clause_relationship"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "local_format",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "vendor",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "currency",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "delivery_term",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "warranty",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "mixed",
+          "field": "payment_terms",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "standard",
+          "right": "unlabeled",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        }
+      ]
+    }
+  },
+  "latency_ms": {
+    "operation": "sequential PDF read and extraction including parser worker startup",
+    "samples": [
+      336.859,
+      320.024,
+      322.664,
+      343.439,
+      325.443,
+      312.232,
+      334.566,
+      328.256,
+      328.474,
+      324.861,
+      333.035,
+      319.036
+    ],
+    "median": 326.849,
+    "min": 312.232,
+    "max": 343.439
+  }
+}

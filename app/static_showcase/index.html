@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inspect evidence and compare synthetic supplier proposals in the DocuMind AI recruiter demo.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#111827">
+  <title>DocuMind AI · Proposal comparison</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to the demo</a>
+  <header class="mast">
+    <div class="topbar wrap">
+      <a class="brand" href="./" aria-label="DocuMind AI home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>DocuMind<span> AI</span></strong></a>
+      <a class="source-link" href="https://github.com/stephanyalves-eng/documind-ai">Source on GitHub</a>
+    </div>
+    <div class="hero wrap">
+      <div>
+        <p class="scope"><span></span> Interactive synthetic demo</p>
+        <h1>Compare supplier proposals</h1>
+        <p class="hero-copy">Inspect the original wording behind each decision, from matched amounts to clauses that need a human review.</p>
+      </div>
+      <div class="hero-device" aria-hidden="true">
+        <div class="sheet sheet-back"><i></i><i></i><i></i></div>
+        <div class="sheet sheet-front"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="workspace wrap" id="workspace">
+    <nav class="tabs" aria-label="Demo views">
+      <button type="button" data-view="compare" aria-pressed="true">Comparison</button>
+      <button type="button" data-view="evidence" aria-pressed="false">Evidence</button>
+      <button type="button" data-view="benchmark" aria-pressed="false">Evaluation</button>
+    </nav>
+    <section id="pair-controls" class="pair-controls" aria-label="Synthetic proposals">
+      <div class="pair-doc"><span class="file-icon" aria-hidden="true">A</span><div><span>Reference proposal</span><strong>Standard proposal</strong></div></div>
+      <label class="pair-doc candidate"><span class="file-icon" aria-hidden="true">B</span><span class="candidate-label"><span>Compare with</span><select id="scenario" aria-label="Comparison scenario"></select></span></label>
+      <a id="json-download" download class="button secondary">Download JSON</a>
+    </section>
+    <p id="live-status" role="status" class="sr-only"></p>
+
+    <section id="compare" class="view" aria-label="Field comparison">
+      <div class="metrics" id="status-cards"></div>
+      <div class="work-grid">
+        <article class="card">
+          <header class="card-heading"><h2>Field comparison</h2><p>Select a field to review its PDF evidence.</p></header>
+          <div id="comparison-table"></div>
+        </article>
+        <aside class="card inspector" aria-labelledby="inspector-title">
+          <header class="card-heading"><p class="eyebrow">Evidence inspector</p><h2 id="inspector-title"></h2></header>
+          <div id="inspector"></div>
+          <button type="button" data-open-evidence class="button evidence-link">Open evidence view</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="evidence" class="view" aria-label="PDF evidence" hidden>
+      <div class="evidence-toolbar"><div><h2>PDF evidence</h2><p>Review the exact extraction line and its physical page.</p></div><label>Field <select id="evidence-field"></select></label></div>
+      <div class="evidence-grid" id="page-evidence"></div>
+    </section>
+
+    <section id="benchmark" class="view" aria-label="Synthetic evaluation" hidden>
+      <div class="section-top"><div><h2>Synthetic evaluation</h2><p>Results from 12 generated PDFs and 11 annotated comparison pairs.</p></div><a class="button secondary" href="benchmark.json" download>Download benchmark</a></div>
+      <div id="evaluation"></div>
+    </section>
+
+    <noscript><p class="card noscript">Enable JavaScript to explore the precomputed examples. <a href="benchmark.json">Open the benchmark JSON</a>.</p></noscript>
+  </main>
+  <footer class="footer"><div class="wrap"><strong>DocuMind AI</strong><p>This demo displays precomputed synthetic results. Run the CLI locally to process a new PDF.</p><a href="https://github.com/stephanyalves-eng/documind-ai#install">Local setup</a></div></footer>
+</body>
+</html>

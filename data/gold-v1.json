@@ -1,0 +1,548 @@
+{
+  "version": "synthetic-v1",
+  "documents": {
+    "standard": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1,200.00"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 2,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 2,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 2,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      },
+      "subtotal": {
+        "value": "1000.00",
+        "source_page": 1,
+        "evidence_text": "Subtotal: 1,000.00"
+      },
+      "tax": {
+        "value": "200.00",
+        "source_page": 1,
+        "evidence_text": "Tax: 200.00"
+      },
+      "issue_date": {
+        "value": "2026-01-15",
+        "source_page": 1,
+        "evidence_text": "Issue date: 2026-01-15"
+      },
+      "valid_until": {
+        "value": "2026-03-15",
+        "source_page": 1,
+        "evidence_text": "Valid until: 2026-03-15"
+      }
+    },
+    "equivalent": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Supplier: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Quote currency: usd"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Grand total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 2 weeks from order",
+        "source_page": 2,
+        "evidence_text": "Lead time: within 2 weeks from order"
+      },
+      "warranty": {
+        "value": "1 year from delivery",
+        "source_page": 2,
+        "evidence_text": "Warranty term: 1 year from delivery"
+      },
+      "payment_terms": {
+        "value": "payable 30 days from invoice date",
+        "source_page": 2,
+        "evidence_text": "Payment: payable 30 days from invoice date"
+      }
+    },
+    "different": {
+      "vendor": {
+        "value": "Quartz Test Systems",
+        "source_page": 1,
+        "evidence_text": "Vendor: Quartz Test Systems"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1350.00",
+        "source_page": 1,
+        "evidence_text": "Total amount: 1,350.00"
+      },
+      "delivery_term": {
+        "value": "within 21 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery: within 21 calendar days after order"
+      },
+      "warranty": {
+        "value": "24 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 24 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 60 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment: due 60 days after invoice"
+      }
+    },
+    "partial": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery: within 14 calendar days after order"
+      }
+    },
+    "foreign": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "EUR",
+        "source_page": 1,
+        "evidence_text": "Currency: EUR"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      }
+    },
+    "bad_total": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      },
+      "subtotal": {
+        "value": "1000.00",
+        "source_page": 1,
+        "evidence_text": "Subtotal: 1000"
+      },
+      "tax": {
+        "value": "199.99",
+        "source_page": 1,
+        "evidence_text": "Tax: 199.99"
+      },
+      "issue_date": {
+        "value": "2026-02-10",
+        "source_page": 1,
+        "evidence_text": "Issue date: 2026-02-10"
+      },
+      "valid_until": {
+        "value": "2026-02-01",
+        "source_page": 1,
+        "evidence_text": "Valid until: 2026-02-01"
+      }
+    },
+    "conflict": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 2,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 2,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 2,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      }
+    },
+    "conditional": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after acceptance and invoice approval",
+        "source_page": 1,
+        "evidence_text": "Payment: due 30 days after acceptance and invoice approval"
+      }
+    },
+    "freeform": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "settlement is due thirty days after the invoice date",
+        "source_page": 1,
+        "evidence_text": "Payment: settlement is due thirty days after the invoice date"
+      }
+    },
+    "local_format": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "CHF",
+        "source_page": 1,
+        "evidence_text": "Currency: CHF"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1.200,00"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      }
+    },
+    "mixed": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Vendor: Meridian Test Supply"
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Currency: USD"
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Total: 1200"
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      }
+    },
+    "unlabeled": {
+      "vendor": {
+        "value": "Meridian Test Supply",
+        "source_page": 1,
+        "evidence_text": "Meridian Test Supply submits this offer in US dollars."
+      },
+      "currency": {
+        "value": "USD",
+        "source_page": 1,
+        "evidence_text": "Meridian Test Supply submits this offer in US dollars."
+      },
+      "amount": {
+        "value": "1200.00",
+        "source_page": 1,
+        "evidence_text": "Our all-inclusive total is 1200.00."
+      },
+      "delivery_term": {
+        "value": "within 14 calendar days after order",
+        "source_page": 1,
+        "evidence_text": "Delivery term: within 14 calendar days after order"
+      },
+      "warranty": {
+        "value": "12 months after delivery",
+        "source_page": 1,
+        "evidence_text": "Warranty: 12 months after delivery"
+      },
+      "payment_terms": {
+        "value": "due 30 days after invoice",
+        "source_page": 1,
+        "evidence_text": "Payment terms: due 30 days after invoice"
+      }
+    }
+  },
+  "pairs": [
+    {
+      "left": "standard",
+      "right": "equivalent",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "matched",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "different",
+      "expected": {
+        "vendor": "different",
+        "currency": "matched",
+        "amount": "different",
+        "delivery_term": "different",
+        "warranty": "different",
+        "payment_terms": "different"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "partial",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "matched",
+        "delivery_term": "matched",
+        "warranty": "missing",
+        "payment_terms": "needs_review"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "foreign",
+      "expected": {
+        "vendor": "matched",
+        "currency": "different",
+        "amount": "needs_review",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "bad_total",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "needs_review",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "conflict",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "needs_review",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "conditional",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "matched",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "different"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "freeform",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "matched",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "local_format",
+      "expected": {
+        "vendor": "matched",
+        "currency": "different",
+        "amount": "needs_review",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "mixed",
+      "expected": {
+        "vendor": "needs_review",
+        "currency": "needs_review",
+        "amount": "needs_review",
+        "delivery_term": "needs_review",
+        "warranty": "needs_review",
+        "payment_terms": "needs_review"
+      }
+    },
+    {
+      "left": "standard",
+      "right": "unlabeled",
+      "expected": {
+        "vendor": "matched",
+        "currency": "matched",
+        "amount": "matched",
+        "delivery_term": "matched",
+        "warranty": "matched",
+        "payment_terms": "matched"
+      }
+    }
+  ]
+}

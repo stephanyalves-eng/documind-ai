@@ -1,0 +1,20 @@
+# Keep PDFs and document-derived local data out of version control.
+*.pdf
+*.csv
+*.json
+!data/synthetic-v1.json
+!data/gold-v1.json
+!docs/benchmark.json
+data/generated/
+outputs/
+.venv/
+.venv-audit/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.env
+.env.*
