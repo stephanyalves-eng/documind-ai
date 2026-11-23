@@ -1,6 +1,6 @@
 # DocuMind AI portfolio visuals
 
-[Open the interactive demo](https://stephanyalves-eng.github.io/documind-ai/) · [Source repository](https://github.com/stephanyalves-eng/documind-ai)
+[Open the interactive demo](https://stephanyalves-eng.github.io/documind-ai/) · [Case study and videos](https://stephanyalves-eng.github.io/documind-ai/portfolio.html) · [Source repository](https://github.com/stephanyalves-eng/documind-ai)
 
 | Screen | Scenario | What to look for |
 | --- | --- | --- |

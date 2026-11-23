@@ -3,7 +3,15 @@ from typing import Literal
 
 from .extract import validate
 from .normalize import REQUIRED, text_key
-from .schemas import Comparison, FieldName, FieldStatus, MatchStatus, Report
+from .schemas import (
+    CLAUSE_FIELDS,
+    CURRENT_REPORT_VERSION,
+    Comparison,
+    FieldName,
+    FieldStatus,
+    MatchStatus,
+    Report,
+)
 
 Mode = Literal["strict", "rules"]
 PAYMENT = re.compile(
@@ -11,7 +19,6 @@ PAYMENT = re.compile(
 )
 WARRANTY = re.compile(r"([1-9][0-9]{0,2}) (months?|years?) (?:from|after) delivery")
 DELIVERY = re.compile(r"(?:within )?([1-9][0-9]{0,2}) (calendar days?|weeks?) (?:from|after) order")
-CLAUSES = {FieldName.DELIVERY, FieldName.WARRANTY, FieldName.PAYMENT}
 
 
 def _clause_key(field: FieldName, value: str) -> tuple[int, bool] | None:
@@ -37,7 +44,7 @@ def _decision(
     a, b = text_key(left), text_key(right)
     if a == b:
         return MatchStatus.MATCHED, "normalized_equality"
-    if field not in CLAUSES or mode == "strict":
+    if field not in CLAUSE_FIELDS or mode == "strict":
         return MatchStatus.DIFFERENT, "normalized_inequality"
     first, second = _clause_key(field, a), _clause_key(field, b)
     if first is None or second is None:
@@ -59,7 +66,21 @@ def compare(left: Report, right: Report, mode: Mode = "rules") -> tuple[Comparis
         a, a_status = left.effective_value(field)
         b, b_status = right.effective_value(field)
         blocked = field in blocked_fields or FieldStatus.NEEDS_REVIEW in (a_status, b_status)
-        if field is FieldName.AMOUNT and a is not None and b is not None:
+        legacy_clause = (
+            field in CLAUSE_FIELDS
+            and a is not None
+            and b is not None
+            and (
+                (left.schema_version < CURRENT_REPORT_VERSION and a_status is FieldStatus.EXTRACTED)
+                or (
+                    right.schema_version < CURRENT_REPORT_VERSION
+                    and b_status is FieldStatus.EXTRACTED
+                )
+            )
+        )
+        if legacy_clause:
+            status, reason = MatchStatus.NEEDS_REVIEW, "legacy_clause_evidence"
+        elif field is FieldName.AMOUNT and a is not None and b is not None:
             if left_currency is None or right_currency is None:
                 status, reason = MatchStatus.NEEDS_REVIEW, "unresolved_currency"
             elif left_currency != right_currency:

@@ -1,0 +1,3512 @@
+{
+  "dataset": {
+    "version": "synthetic-v2",
+    "documents": 17,
+    "pairs": 18,
+    "manifest_sha256": "b84dcc8416c86a08d4bd4fe3d3d754b7c9af1f8d811067d69f41c79bc6839d1c",
+    "gold_sha256": "18bd8afd1aa6bb3d2ce1efa3f0824233bb63675d6b6a1a6ba0389d13ea792a25",
+    "pdf_sha256": {
+      "br_bilingual": "50f1b06b0af3bb86132c31033074afc2c067e3711b9fcbeaf61cb42eeb2f0852",
+      "br_portuguese": "d1bd94394a4646abb2a5e18bbbe71efedb60812429be1b8523487880f9c8eb57",
+      "br_localized_amount": "2e825d3a41ef046e501f01c28627427671b9fe56f37e18c5e0ec1f76e82bec13",
+      "br_localized_markup": "8042adeb1602303b0b74e14a5ba19fb49cc58f98593ed61e2e890adb1fb96b94",
+      "br_bad_arithmetic": "9e11a6ff9fdcfb6fea639d91614cc1707c995c41ebc48af9bb535d95578f5b20",
+      "br_reference_in_usd": "3da332cfff67eae52bdaff43eccc76c2a0a4fedb33bc22c4045a4cdda0a0b35e",
+      "br_payment_negation": "0f94cd7192960829a8605084b10c0e9f74955e5880e33b34d92e639c76f9b2c0",
+      "en_reference": "6dfdde73db768f20e7a270cdc79e9be7d8ce2b536b69784fff08e4d536a2a5d0",
+      "en_equivalent_format": "896b9d48e3acaf6b13830e5408010c5e63cd11275e36407f5841598de183348e",
+      "en_wrapped_payment": "a6edb71540c67718c6ba095f1fdf9a054afc1c29985520404206ece35388e9db",
+      "en_inline_condition": "9b1ccdae5c303b988ae29312ac93074cd4c1eba21a109758617ec4dddd3afbf4",
+      "en_pricing_table": "749058a5a0ac44393a9930a209a162bc6eb4bc7d60de471180677c48ea44b24f",
+      "en_two_columns": "c285b1f065e2f9b031868d964667c4b8fa04a33604e9c3f1fdba65d404b4f72e",
+      "en_two_pages": "4b5c7d4baaa4b9c48375af95961d5729f5c61dc65fd61639673fb51db224c49c",
+      "en_alternative_totals": "c9fe5103a63f0dd853759193bbde159f48bb51feca93fa81d400963fb818de9b",
+      "en_missing_warranty": "ab4be0477d51eb28cdc94aacf94d8bbf9ebad9ed370c02a07dd85f2bf1168cb2",
+      "en_delivery_exclusions": "21251dcbbc677a11da4124090723e473ccdba86db0842672e7168c99d3c96c20"
+    }
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pymupdf": "2.1",
+    "pydantic": "2.14.4",
+    "reportlab": "5.1.0"
+  },
+  "extraction": {
+    "micro": {
+      "tp": 104,
+      "fp": 0,
+      "fn": 24,
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1": 0.896551724137931
+    },
+    "per_field": {
+      "vendor": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8823529411764706,
+        "f1": 0.9375
+      },
+      "currency": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8823529411764706,
+        "f1": 0.9375
+      },
+      "amount": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "delivery_term": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.8823529411764706,
+        "f1": 0.9375
+      },
+      "warranty": {
+        "tp": 14,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333
+      },
+      "payment_terms": {
+        "tp": 14,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.8235294117647058,
+        "f1": 0.9032258064516129
+      },
+      "subtotal": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.5714285714285714,
+        "f1": 0.7272727272727273
+      },
+      "tax": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.7142857142857143,
+        "f1": 0.8333333333333334
+      },
+      "issue_date": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.7142857142857143,
+        "f1": 0.8333333333333334
+      },
+      "valid_until": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.7142857142857143,
+        "f1": 0.8333333333333334
+      }
+    },
+    "numeric_exact_match": 0.7,
+    "citation_accuracy": 1.0,
+    "required_abstention_rate": 0.16666666666666666,
+    "counts": {
+      "required_slots": 102,
+      "required_abstained": 17,
+      "required_needs_review": 4,
+      "citations_predicted": 104,
+      "citations_correct": 104,
+      "numeric_gold": 30,
+      "numeric_correct": 21
+    },
+    "cases": [
+      {
+        "document": "br_bilingual",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": "BRL",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": "12500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "subtotal",
+        "expected": "10000.00",
+        "actual": "10000.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": "2500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": "2026-11-03",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bilingual",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": "2026-12-05",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_portuguese",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "delivery_term",
+        "expected": "em at\u00e9 14 dias corridos ap\u00f3s o pedido",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "warranty",
+        "expected": "12 meses ap\u00f3s a entrega",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "payment_terms",
+        "expected": "30 dias ap\u00f3s a emiss\u00e3o da fatura",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "subtotal",
+        "expected": "10000.00",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_portuguese",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": "BRL",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "subtotal",
+        "expected": "10000.00",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "expected an ISO calendar date"
+      },
+      {
+        "document": "br_localized_amount",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "expected an ISO calendar date"
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": "BRL",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "amount",
+        "expected": "12850.50",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "subtotal",
+        "expected": "10350.50",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "use unsigned amounts with decimal point and optional comma grouping"
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": "2500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": "2026-11-03",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_localized_markup",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": "2026-12-05",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": "BRL",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": "12500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "subtotal",
+        "expected": "10500.00",
+        "actual": "10500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "tax",
+        "expected": "2400.00",
+        "actual": "2400.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": "2026-11-03",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_bad_arithmetic",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": "2026-12-05",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": "12500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "subtotal",
+        "expected": "10000.00",
+        "actual": "10000.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": "2500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": "2026-11-03",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_reference_in_usd",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": "2026-12-05",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "vendor",
+        "expected": "Atlas Demo Servi\u00e7os",
+        "actual": "Atlas Demo Servi\u00e7os",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "currency",
+        "expected": "BRL",
+        "actual": "BRL",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "amount",
+        "expected": "12500.00",
+        "actual": "12500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "delivery_term",
+        "expected": "within 14 calendar days after order",
+        "actual": "within 14 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "payment_terms",
+        "expected": "No payment is due until the invoice and written acceptance are both approved.",
+        "actual": "No payment is due until the invoice and written acceptance are both approved.",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "subtotal",
+        "expected": "10000.00",
+        "actual": "10000.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "tax",
+        "expected": "2500.00",
+        "actual": "2500.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "issue_date",
+        "expected": "2026-11-03",
+        "actual": "2026-11-03",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "br_payment_negation",
+        "field": "valid_until",
+        "expected": "2026-12-05",
+        "actual": "2026-12-05",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_reference",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_reference",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_reference",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_reference",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "delivery_term",
+        "expected": "within 3 weeks from order",
+        "actual": "within 3 weeks from order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "warranty",
+        "expected": "1 year from delivery",
+        "actual": "1 year from delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "payment_terms",
+        "expected": "payable 30 days from invoice date",
+        "actual": "payable 30 days from invoice date",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_equivalent_format",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice Only after written acceptance.",
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "possible_clause_continuation"
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_wrapped_payment",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice, only after written acceptance.",
+        "actual": "due 30 days after invoice, only after written acceptance.",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_inline_condition",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "currency",
+        "expected": "USD",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_pricing_table",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_columns",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_columns",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_columns",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_columns",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_columns",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_pages",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_two_pages",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_pages",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_pages",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_two_pages",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "amount",
+        "expected": null,
+        "actual": null,
+        "status": "needs_review",
+        "evidence_verified": true,
+        "reason": "conflicting_labeled_values"
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_alternative_totals",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order",
+        "actual": "within 21 calendar days after order",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "warranty",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_missing_warranty",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "vendor",
+        "expected": "Quartz Demo Logistics",
+        "actual": "Quartz Demo Logistics",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "currency",
+        "expected": "USD",
+        "actual": "USD",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "amount",
+        "expected": "5200.00",
+        "actual": "5200.00",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "delivery_term",
+        "expected": "within 21 calendar days after order, excluding public holidays.",
+        "actual": "within 21 calendar days after order, excluding public holidays.",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "warranty",
+        "expected": "12 months after delivery",
+        "actual": "12 months after delivery",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "payment_terms",
+        "expected": "due 30 days after invoice",
+        "actual": "due 30 days after invoice",
+        "status": "extracted",
+        "evidence_verified": true,
+        "reason": null
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "subtotal",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "tax",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "issue_date",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      },
+      {
+        "document": "en_delivery_exclusions",
+        "field": "valid_until",
+        "expected": null,
+        "actual": null,
+        "status": "missing",
+        "evidence_verified": false,
+        "reason": "no_supported_label"
+      }
+    ]
+  },
+  "comparison": {
+    "strict": {
+      "status_accuracy": 0.7592592592592593,
+      "status_correct": 82,
+      "status_total": 108,
+      "abstention_rate": 0.08333333333333333,
+      "abstentions": 9,
+      "divergence": {
+        "tp": 4,
+        "fp": 3,
+        "fn": 3,
+        "precision": 0.5714285714285714,
+        "recall": 0.5714285714285714,
+        "f1": 0.5714285714285714
+      },
+      "confusion_expected_then_predicted": {
+        "matched": {
+          "matched": 74,
+          "different": 3,
+          "missing": 17,
+          "needs_review": 3
+        },
+        "different": {
+          "matched": 0,
+          "different": 4,
+          "missing": 0,
+          "needs_review": 3
+        },
+        "missing": {
+          "matched": 0,
+          "different": 0,
+          "missing": 1,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "matched": 0,
+          "different": 0,
+          "missing": 0,
+          "needs_review": 3
+        }
+      },
+      "cases": [
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "cross_currency_amount"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "warranty",
+          "expected": "missing",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "delivery_term",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        }
+      ]
+    },
+    "rules": {
+      "status_accuracy": 0.7592592592592593,
+      "status_correct": 82,
+      "status_total": 108,
+      "abstention_rate": 0.1111111111111111,
+      "abstentions": 12,
+      "divergence": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 6,
+        "precision": 1.0,
+        "recall": 0.14285714285714285,
+        "f1": 0.25
+      },
+      "confusion_expected_then_predicted": {
+        "matched": {
+          "matched": 77,
+          "different": 0,
+          "missing": 17,
+          "needs_review": 3
+        },
+        "different": {
+          "matched": 0,
+          "different": 1,
+          "missing": 0,
+          "needs_review": 6
+        },
+        "missing": {
+          "matched": 0,
+          "different": 0,
+          "missing": 1,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "matched": 0,
+          "different": 0,
+          "missing": 0,
+          "needs_review": 3
+        }
+      },
+      "cases": [
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_portuguese",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_amount",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_localized_markup",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "amount",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_localized_amount",
+          "right": "br_localized_markup",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_bad_arithmetic",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "currency",
+          "expected": "different",
+          "predicted": "different",
+          "reason": "normalized_inequality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "cross_currency_amount"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_reference_in_usd",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "br_bilingual",
+          "right": "br_payment_negation",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unsupported_clause_relationship"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_equivalent_format",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "equivalent_controlled_clause"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_wrapped_payment",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_inline_condition",
+          "field": "payment_terms",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unsupported_clause_relationship"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_pricing_table",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_columns",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_two_pages",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "amount",
+          "expected": "needs_review",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_alternative_totals",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "warranty",
+          "expected": "missing",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_missing_warranty",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "delivery_term",
+          "expected": "different",
+          "predicted": "needs_review",
+          "reason": "unsupported_clause_relationship"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_reference",
+          "right": "en_delivery_exclusions",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "matched",
+          "reason": "normalized_equality"
+        },
+        {
+          "left": "en_wrapped_payment",
+          "right": "en_inline_condition",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "needs_review",
+          "reason": "unresolved_input"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "vendor",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "currency",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "amount",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "delivery_term",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "warranty",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        },
+        {
+          "left": "en_pricing_table",
+          "right": "en_two_columns",
+          "field": "payment_terms",
+          "expected": "matched",
+          "predicted": "missing",
+          "reason": "missing_on_one_or_both_sides"
+        }
+      ]
+    }
+  },
+  "latency_ms": {
+    "operation": "sequential PDF read and extraction including parser worker startup",
+    "samples": [
+      500.717,
+      294.981,
+      327.925,
+      306.565,
+      320.002,
+      315.759,
+      297.063,
+      286.483,
+      307.483,
+      331.972,
+      303.831,
+      302.484,
+      299.585,
+      298.258,
+      334.504,
+      333.985,
+      335.591
+    ],
+    "median": 307.483,
+    "min": 286.483,
+    "max": 500.717
+  }
+}

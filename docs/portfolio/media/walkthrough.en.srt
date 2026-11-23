@@ -1,0 +1,87 @@
+1
+00:00:00,000 --> 00:00:04,280
+Supplier proposals can look
+comparable until you read the terms.
+
+2
+00:00:05,000 --> 00:00:10,260
+DocuMind extracts six commercial fields
+from a text-based PDF and records a quote
+
+3
+00:00:10,260 --> 00:00:12,920
+and page number wherever it finds evidence.
+
+4
+00:00:13,520 --> 00:00:18,580
+Here, the vendor, currency, total
+amount, delivery and warranty match.
+
+5
+00:00:19,280 --> 00:00:21,100
+Payment terms are flagged for review.
+
+6
+00:00:21,500 --> 00:00:25,120
+The reference says payment
+is due 30 days after invoice.
+
+7
+00:00:25,560 --> 00:00:28,620
+The candidate adds acceptance
+and invoice approval.
+
+8
+00:00:29,040 --> 00:00:33,380
+The rules leave that relationship to
+a person, with both excerpts visible.
+
+9
+00:00:33,940 --> 00:00:37,000
+Switch to conflicting totals
+and open the evidence view.
+
+10
+00:00:37,360 --> 00:00:42,340
+The candidate shows 1200 on
+page 1 and 950 on page 2.
+
+11
+00:00:42,660 --> 00:00:45,280
+DocuMind keeps both citations for review.
+
+12
+00:00:45,700 --> 00:00:48,900
+The evaluation used 12 synthetic PDFs.
+
+13
+00:00:49,140 --> 00:00:52,208
+Field F1 was 96.6%.
+
+14
+00:00:52,300 --> 00:00:56,520
+All 72 accepted citations
+match the reference evidence.
+
+15
+00:00:57,300 --> 00:01:02,720
+Controlled rules raised comparison accuracy
+from 58 to 60 of 66 field decisions
+
+16
+00:01:02,720 --> 00:01:04,900
+and sent more cases to review.
+
+17
+00:01:05,280 --> 00:01:07,600
+Those results describe the synthetic set.
+
+18
+00:01:08,100 --> 00:01:11,080
+New PDFs are processed through
+the local command line.
+
+19
+00:01:11,500 --> 00:01:15,542
+Open the public demo to inspect the
+examples and download their evidence.

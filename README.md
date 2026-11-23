@@ -4,7 +4,7 @@ DocuMind extracts commercial fields from locally stored, text-based PDFs, cites 
 
 [![DocuMind AI showing field comparison and page evidence](docs/portfolio/comparison.png)](https://stephanyalves-eng.github.io/documind-ai/)
 
-**[Open the interactive recruiter demo](https://stephanyalves-eng.github.io/documind-ai/)** · [Desktop and mobile screens](docs/portfolio/README.md) · [Hosted quality checks](https://github.com/stephanyalves-eng/documind-ai/actions/workflows/ci.yml)
+**[Open the interactive recruiter demo](https://stephanyalves-eng.github.io/documind-ai/)** · [Case study and videos](https://stephanyalves-eng.github.io/documind-ai/portfolio.html) · [Desktop and mobile screens](docs/portfolio/README.md) · [Hosted quality checks](https://github.com/stephanyalves-eng/documind-ai/actions/workflows/ci.yml)
 
 The browser demo uses 12 generated PDFs and 11 precomputed comparison scenarios. Inspect exact quotes, switch cases and download the matching synthetic PDFs and reports. Processing a new document uses the local CLI.
 
@@ -39,6 +39,8 @@ Review each field's observations, evidence and issues in the JSON. Corrections a
 
 Comparison output indicates whether machine evidence was checked against the PDFs. Comparisons based solely on saved reports carry `machine_evidence=unverified`. Add `--source-pdfs` to check both reports before comparing. Manual corrections remain separately attributed. For private values, pipe a local JSON object with `value` and `reason` into `documind correct REPORT FIELD --stdin`.
 
+Version 2 reports route potential multiline conditions to review and retain the source lines. Saved version 1 reports need source PDF verification before their machine-extracted clauses qualify for automatic comparison. Re-extract a report when the new parser finds different evidence.
+
 ## Supported input
 
 - Label-and-value lines for vendor, currency, total amount, delivery, warranty and payment. Optional labels cover subtotal, tax, issue date and validity date. The active label aliases are defined in [fields.toml](src/documind/fields.toml).
@@ -51,6 +53,7 @@ Comparison output indicates whether machine evidence was checked against the PDF
 
 ```powershell
 python -m scripts.evaluate --output outputs/benchmark.json
+python -m scripts.evaluate --dataset v2 --output outputs/benchmark-v2.json
 python -m pytest -q
 python -m ruff check .
 python -m ruff format --check .
@@ -67,6 +70,8 @@ python -m http.server 8765 --bind 127.0.0.1 --directory outputs/showcase
 
 Open `http://127.0.0.1:8765/`. GitHub Pages packages the same static directory after the Linux quality jobs pass.
 
-See the [security and quality audit](docs/audit.md), [evaluation protocol](docs/evaluation.md), [machine-readable run](docs/benchmark.json), [architecture](docs/architecture.md), [limitations](docs/limitations.md), [data policy](docs/data_policy.md) and [model card](model_card.md).
+The default v1 benchmark backs the static recruiter showcase. The [separate v2 diagnostic set](docs/evaluation-v2.md) covers Portuguese labels, Brazilian amount and date formats, tables, columns and conditional clauses.
+
+See the [security and quality audit](docs/audit.md), [v1 evaluation protocol](docs/evaluation.md), [machine-readable run](docs/benchmark.json), [architecture](docs/architecture.md), [limitations](docs/limitations.md), [data policy](docs/data_policy.md) and [model card](model_card.md).
 
 DocuMind AI uses [AGPL-3.0-only](LICENSE). Artifex offers PyMuPDF under AGPL and commercial terms. See [PyMuPDF licensing](https://pymupdf.readthedocs.io/en/latest/about.html#license-and-copyright).

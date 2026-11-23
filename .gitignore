@@ -4,8 +4,13 @@
 *.json
 !data/synthetic-v1.json
 !data/gold-v1.json
+!data/synthetic-v2.json
+!data/gold-v2.json
 !docs/benchmark.json
+!docs/benchmark-v2.json
+!docs/benchmark-v2-before-fix.json
 data/generated/
+data/generated-v2/
 outputs/
 .venv/
 .venv-audit/

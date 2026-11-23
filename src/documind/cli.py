@@ -39,11 +39,12 @@ def _load_report(path: Path) -> Report:
     return report.model_copy(update={"issues": validate(report)})
 
 
-def _verify_report(report: Report, path: Path) -> None:
+def _verify_report(report: Report, path: Path) -> Report:
     original = extract(read_pdf(path))
-    excluded = {"corrections", "issues"}
+    excluded = {"corrections", "issues", "schema_version"}
     if report.model_dump(exclude=excluded) != original.model_dump(exclude=excluded):
-        raise PDFError("report does not match PDF machine evidence")
+        raise PDFError("report does not match PDF machine evidence. Regenerate it from the PDF")
+    return report.model_copy(update={"schema_version": original.schema_version})
 
 
 def _correction_input(args: argparse.Namespace) -> tuple[str, str]:
@@ -115,8 +116,8 @@ def main(argv: list[str] | None = None) -> int:
                 left, right = _load_report(args.left), _load_report(args.right)
                 machine_evidence = "unverified"
                 if args.source_pdfs:
-                    _verify_report(left, args.source_pdfs[0])
-                    _verify_report(right, args.source_pdfs[1])
+                    left = _verify_report(left, args.source_pdfs[0])
+                    right = _verify_report(right, args.source_pdfs[1])
                     machine_evidence = "verified"
             else:
                 if args.source_pdfs:

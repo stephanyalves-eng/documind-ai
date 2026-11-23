@@ -1,0 +1,32 @@
+1
+00:00:00,120 --> 00:00:03,870
+Compare supplier proposals
+with page-level evidence.
+
+2
+00:00:04,120 --> 00:00:08,870
+Five fields match in this synthetic pair.
+
+3
+00:00:09,120 --> 00:00:13,870
+The payment clause needs a human review.
+
+4
+00:00:14,120 --> 00:00:17,870
+On page 2, the reference
+says 30 days after invoice.
+
+5
+00:00:18,120 --> 00:00:22,870
+On page 1, the candidate adds
+acceptance and invoice approval.
+
+6
+00:00:23,120 --> 00:00:28,870
+Two conflicting totals stay
+visible on their original pages.
+
+7
+00:00:29,120 --> 00:00:35,870
+Explore all 11 synthetic
+scenarios in the public demo.

@@ -1,6 +1,7 @@
 import json
 from hashlib import sha256
 from pathlib import Path
+from re import findall
 
 from scripts.build_showcase import build
 
@@ -20,4 +21,17 @@ def test_showcase_produces_linked_synthetic_examples(tmp_path: Path) -> None:
         assert result["comparisons"] == payload["comparisons"][scenario]
         for side, path in (("left", baseline), ("right", folder / f"{scenario}.pdf")):
             assert result[side]["document_sha256"] == sha256(path.read_bytes()).hexdigest()
-    assert "data.js" in (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "data.js" in index
+    assert 'href="portfolio.html"' in index
+    portfolio = (tmp_path / "portfolio.html").read_text(encoding="utf-8")
+    for asset in findall(r'"(media/[^"]+|benchmark-v2\.json)"', portfolio):
+        assert (tmp_path / asset).stat().st_size > 0
+    assert {path.name for path in (tmp_path / "media").iterdir()} == {
+        "walkthrough.mp4",
+        "walkthrough.en.srt",
+        "short.mp4",
+        "short.en.srt",
+        "thumbnail.png",
+        "comparison.png",
+    }

@@ -14,6 +14,7 @@ from .generate_test_docs import ROOT, generate
 
 SOURCE = ROOT / "app" / "static_showcase"
 BENCHMARK = ROOT / "docs" / "benchmark.json"
+PORTFOLIO = ROOT / "docs" / "portfolio"
 CASES = {
     "conditional": "Conditional payment",
     "equivalent": "Equivalent wording",
@@ -27,13 +28,20 @@ CASES = {
     "mixed": "Unreadable page",
     "unlabeled": "Unlabeled values",
 }
-ASSETS = ("index.html", "styles.css", "app.js", "icon.png")
+ASSETS = ("index.html", "portfolio.html", "styles.css", "app.js", "icon.png")
+MEDIA = ("walkthrough.mp4", "walkthrough.en.srt", "short.mp4", "short.en.srt", "thumbnail.png")
 
 
 def build(output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     for name in ASSETS:
         copyfile(SOURCE / name, output / name)
+    media = output / "media"
+    media.mkdir(exist_ok=True)
+    for name in MEDIA:
+        copyfile(PORTFOLIO / "media" / name, media / name)
+    copyfile(PORTFOLIO / "comparison.png", media / "comparison.png")
+    copyfile(BENCHMARK.with_name("benchmark-v2.json"), output / "benchmark-v2.json")
     write_artifact(output / ".nojekyll", b"")
     fixtures = generate(output / "examples")
     documents = {name: read_pdf(path) for name, path in fixtures.items()}

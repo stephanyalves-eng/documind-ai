@@ -17,10 +17,10 @@ from documind.evidence import verify_evidence
 from documind.extract import extract
 from documind.normalize import NUMERIC_FIELDS, REQUIRED
 from documind.pdf_ingest import read_pdf
-from documind.schemas import FieldName, FieldStatus, MatchStatus, Record, Report
+from documind.schemas import Evidence, FieldName, FieldStatus, MatchStatus, Record, Report
 
 from ._output import write_artifact
-from .generate_test_docs import MANIFEST, ROOT, generate
+from .generate_test_docs import DATASETS, ROOT, generate, manifest_path
 
 GOLD = ROOT / "data" / "gold-v1.json"
 
@@ -29,6 +29,10 @@ class Annotation(Record):
     value: str
     source_page: Annotated[int, Field(ge=1)]
     evidence_text: str
+
+    def supported_by(self, evidence: tuple[Evidence, ...]) -> bool:
+        observed = {item.evidence_text for item in evidence if item.source_page == self.source_page}
+        return set(self.evidence_text.split("\n")) <= observed
 
 
 class Pair(Record):
@@ -103,11 +107,12 @@ def score_comparisons(gold: Gold, reports: dict[str, Report], mode: Mode) -> dic
     }
 
 
-def evaluate(output_dir: Path) -> dict[str, object]:
-    manifest_bytes = MANIFEST.read_bytes()
-    gold_bytes = GOLD.read_bytes()
+def evaluate(output_dir: Path, dataset: str = "v1") -> dict[str, object]:
+    manifest_bytes = manifest_path(dataset).read_bytes()
+    gold_path = GOLD if dataset == "v1" else ROOT / "data" / "gold-v2.json"
+    gold_bytes = gold_path.read_bytes()
     gold = Gold.model_validate_json(gold_bytes)
-    paths = generate(output_dir)
+    paths = generate(output_dir, dataset)
     if set(paths) != set(gold.documents) or gold.version != json.loads(manifest_bytes)["version"]:
         raise ValueError("fixture manifest and gold must describe the same dataset")
 
@@ -125,7 +130,7 @@ def evaluate(output_dir: Path) -> dict[str, object]:
         references = gold.documents[name]
         for field, annotation in references.items():
             page = annotation.source_page
-            if page > len(document.pages) or annotation.evidence_text not in (
+            if page > len(document.pages) or not set(annotation.evidence_text.split("\n")) <= set(
                 document.pages[page - 1].split("\n")
             ):
                 raise ValueError(f"unverifiable gold annotation for {name}/{field}")
@@ -151,11 +156,7 @@ def evaluate(output_dir: Path) -> dict[str, object]:
                 )
             all_verified = all(verify_evidence(document, item) for item in observation.evidence)
             if actual is not None:
-                cites_gold = reference is not None and any(
-                    item.source_page == reference.source_page
-                    and item.evidence_text == reference.evidence_text
-                    for item in observation.evidence
-                )
+                cites_gold = reference is not None and reference.supported_by(observation.evidence)
                 counts["citations_predicted"] += 1
                 counts["citations_correct"] += int(exact and cites_gold and all_verified)
             details.append(
@@ -219,10 +220,11 @@ def evaluate(output_dir: Path) -> dict[str, object]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate DocuMind on annotated synthetic PDFs")
+    parser.add_argument("--dataset", choices=DATASETS, default="v1")
     parser.add_argument("--output", type=Path, help="write JSON instead of printing it")
     args = parser.parse_args()
     with tempfile.TemporaryDirectory(prefix="documind-synthetic-") as scratch:
-        result = evaluate(Path(scratch))
+        result = evaluate(Path(scratch), args.dataset)
     payload = json.dumps(result, indent=2) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

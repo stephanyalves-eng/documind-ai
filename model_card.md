@@ -1,6 +1,6 @@
 # Extraction and matching card
 
-**Version 0.1.1.** Deterministic rules with PyMuPDF for text acquisition and Pydantic for typed reports. There are no trainable weights or confidence scores.
+**Version 0.1.2.** Deterministic rules with PyMuPDF for text acquisition and Pydantic for typed reports. There are no trainable weights or confidence scores.
 
 **Intended use.** Assist a human comparing labeled supplier proposals with visible evidence. Inspect the underlying page and all validation issues before acting on commercial terms.
 

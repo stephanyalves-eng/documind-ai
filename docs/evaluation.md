@@ -1,5 +1,7 @@
 # Synthetic v1 evaluation
 
+For the later diagnostic set on Portuguese labels, Brazilian formats and varied layouts, see the [synthetic v2 evaluation](evaluation-v2.md).
+
 Run `python -m scripts.evaluate --output outputs/benchmark.json` from the repository root. The harness regenerates the PDFs locally and compares results against the checked-in annotations. The [captured run](benchmark.json) includes exact counts, per-field decisions, a confusion matrix for each comparator, package versions, all PDF and annotation hashes, and timing samples.
 
 ## Protocol

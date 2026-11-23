@@ -1,5 +1,5 @@
 from enum import StrEnum
-from typing import Annotated, Literal, Self
+from typing import Annotated, Final, Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -19,6 +19,10 @@ class FieldName(StrEnum):
     TAX = "tax"
     ISSUE_DATE = "issue_date"
     VALID_UNTIL = "valid_until"
+
+
+CLAUSE_FIELDS = frozenset({FieldName.DELIVERY, FieldName.WARRANTY, FieldName.PAYMENT})
+CURRENT_REPORT_VERSION: Final = 2
 
 
 class FieldStatus(StrEnum):
@@ -41,7 +45,7 @@ PageNumber = Annotated[int, Field(ge=1)]
 class Evidence(Record):
     source_page: PageNumber
     evidence_text: str = Field(min_length=1)
-    extraction_method: Literal["anchored_label"] = "anchored_label"
+    extraction_method: Literal["anchored_label", "adjacent_condition"] = "anchored_label"
 
 
 class Observation(Record):
@@ -86,7 +90,7 @@ class Issue(Record):
 
 
 class Report(Record):
-    schema_version: Annotated[int, Field(ge=1, le=1)] = 1
+    schema_version: Literal[1, 2] = 1
     document_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     page_count: PageNumber
     unreadable_pages: tuple[PageNumber, ...] = ()

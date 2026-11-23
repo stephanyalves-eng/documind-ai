@@ -3,10 +3,13 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
+from documind.compare import compare
+from documind.evidence import verify_evidence
 from documind.extract import correct, extract
 from documind.normalize import normalize
 from documind.pdf_ingest import PDFText, read_pdf
-from documind.schemas import Evidence, FieldName, FieldStatus, Observation, Report
+from documind.schemas import Evidence, FieldName, FieldStatus, MatchStatus, Observation, Report
+from scripts.generate_test_docs import generate
 
 
 @pytest.mark.parametrize("value", ["1,20", "NaN", "2e3", "-5.00", "1,00.00", "$20", "1.200,00"])
@@ -78,3 +81,45 @@ def test_invalid_corrections_and_machine_states(pdfs: dict[str, Path]) -> None:
         Observation(confidence_or_status=FieldStatus.MISSING, value="invented", reason="missing")
     with pytest.raises(ValidationError):
         Evidence(source_page=0, evidence_text="Vendor: test")
+
+
+def test_wrapped_payment_condition_prevents_false_match(tmp_path: Path) -> None:
+    fixtures = generate(tmp_path, "v2")
+    source = read_pdf(fixtures["en_wrapped_payment"])
+    candidate = extract(source)
+    reference = extract(read_pdf(fixtures["en_reference"]))
+    payment = candidate.observations[FieldName.PAYMENT]
+    assert payment.value is None
+    assert payment.confidence_or_status is FieldStatus.NEEDS_REVIEW
+    assert payment.reason == "possible_clause_continuation"
+    assert [
+        (quote.source_page, quote.evidence_text, quote.extraction_method)
+        for quote in payment.evidence
+    ] == [
+        (1, "Payment terms: due 30 days after invoice", "anchored_label"),
+        (1, "Only after written acceptance.", "adjacent_condition"),
+    ]
+    assert all(verify_evidence(source, quote) for quote in payment.evidence)
+    for results in (compare(reference, candidate), compare(reference, candidate, "strict")):
+        decision = next(item for item in results if item.field is FieldName.PAYMENT)
+        assert decision.status is MatchStatus.NEEDS_REVIEW
+
+
+@pytest.mark.parametrize(
+    ("field", "clause", "continuation"),
+    [
+        (
+            FieldName.DELIVERY,
+            "Delivery: within 21 calendar days after order",
+            "- Excluding holidays",
+        ),
+        (FieldName.WARRANTY, "Warranty: 12 months after delivery", "Subject to written approval"),
+    ],
+)
+def test_adjacent_conditions_are_reviewed_for_other_clause_fields(
+    field: FieldName, clause: str, continuation: str
+) -> None:
+    source = PDFText("1" * 64, (f"{clause}\n{continuation}\nVendor: Example",), ())
+    observation = extract(source).observations[field]
+    assert observation.confidence_or_status is FieldStatus.NEEDS_REVIEW
+    assert tuple(quote.evidence_text for quote in observation.evidence) == (clause, continuation)

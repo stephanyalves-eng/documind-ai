@@ -4,15 +4,38 @@ from decimal import Context, Decimal, localcontext
 
 from .normalize import ALIASES, REQUIRED, normalize, text_key
 from .pdf_ingest import PDFText
-from .schemas import Correction, Evidence, FieldName, FieldStatus, Issue, Observation, Report
+from .schemas import (
+    CLAUSE_FIELDS,
+    CURRENT_REPORT_VERSION,
+    Correction,
+    Evidence,
+    FieldName,
+    FieldStatus,
+    Issue,
+    Observation,
+    Report,
+)
 
 LABEL = re.compile(r"^[ \t]*([A-Za-z][A-Za-z ]{0,40})[ \t]*:[ \t]*(.*)$")
+CONDITION = re.compile(
+    r"^[ \t]*(?:[•–-][ \t]+)?"
+    r"(?:only|subject[ \t]+to|unless|if|provided|except|excluding|"
+    r"contingent[ \t]+on|conditional[ \t]+on|not[ \t]+until|"
+    r"somente|apenas|desde[ \t]+que|sujeit[oa][ \t]+a|salvo|exceto)\b",
+    re.IGNORECASE,
+)
 
 
-def _observe(field: FieldName, candidates: list[tuple[str, Evidence]]) -> Observation:
+def _observe(field: FieldName, candidates: list[tuple[str, tuple[Evidence, ...]]]) -> Observation:
     if not candidates:
         return Observation(confidence_or_status=FieldStatus.MISSING, reason="no_supported_label")
-    evidence = tuple(item for _, item in candidates)
+    evidence = tuple(item for _, group in candidates for item in group)
+    if any(item.extraction_method == "adjacent_condition" for item in evidence):
+        return Observation(
+            confidence_or_status=FieldStatus.NEEDS_REVIEW,
+            evidence=evidence,
+            reason="possible_clause_continuation",
+        )
     try:
         values = [normalize(field, raw) for raw, _ in candidates]
     except ValueError as exc:
@@ -79,14 +102,29 @@ def validate(report: Report) -> tuple[Issue, ...]:
 
 
 def extract(document: PDFText) -> Report:
-    candidates: dict[FieldName, list[tuple[str, Evidence]]] = defaultdict(list)
+    candidates: dict[FieldName, list[tuple[str, tuple[Evidence, ...]]]] = defaultdict(list)
     for page, text in enumerate(document.pages, 1):
-        for line in text.split("\n"):
+        lines = text.split("\n")
+        for index, line in enumerate(lines):
             match = LABEL.fullmatch(line)
             if match and (field := ALIASES.get(text_key(match[1]))) is not None:
-                candidates[field].append((match[2], Evidence(source_page=page, evidence_text=line)))
+                evidence = [Evidence(source_page=page, evidence_text=line)]
+                if field in CLAUSE_FIELDS:
+                    # A recognized condition immediately after a clause can change its meaning.
+                    next_index = index + 1
+                    while next_index < len(lines) and CONDITION.match(lines[next_index]):
+                        evidence.append(
+                            Evidence(
+                                source_page=page,
+                                evidence_text=lines[next_index],
+                                extraction_method="adjacent_condition",
+                            )
+                        )
+                        next_index += 1
+                candidates[field].append((match[2], tuple(evidence)))
 
     report = Report(
+        schema_version=CURRENT_REPORT_VERSION,
         document_sha256=document.sha256,
         page_count=len(document.pages),
         unreadable_pages=document.unreadable_pages,

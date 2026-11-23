@@ -82,3 +82,28 @@ def test_verify_detects_a_changed_observation(tmp_path: Path, pdfs: dict[str, Pa
     report_path = tmp_path / "report.json"
     report_path.write_text(json.dumps(forged), encoding="utf-8")
     assert run("verify", report_path, pdfs["standard"]).returncode == 2
+
+
+def test_legacy_clause_needs_source_verification(tmp_path: Path, pdfs: dict[str, Path]) -> None:
+    source = pdfs["standard"]
+    current = run("extract", source)
+    assert current.returncode == 0
+    legacy = json.loads(current.stdout)
+    legacy["schema_version"] = 1
+    report_path = tmp_path / "legacy.json"
+    report_path.write_text(json.dumps(legacy), encoding="utf-8")
+    unverified = run("compare", report_path, report_path, "--reports")
+    assert unverified.returncode == 0
+    rows = {row["field"]: row for row in json.loads(unverified.stdout)["comparisons"]}
+    assert rows["amount"]["status"] == "matched"
+    assert rows["payment_terms"]["status"] == "needs_review"
+    assert rows["payment_terms"]["reason"] == "legacy_clause_evidence"
+
+    verified = run(
+        "compare", report_path, report_path, "--reports", "--source-pdfs", source, source
+    )
+    assert verified.returncode == 0
+    output = json.loads(verified.stdout)
+    assert output["left"]["schema_version"] == 2
+    assert output["machine_evidence"] == "verified"
+    assert all(row["status"] == "matched" for row in output["comparisons"])
